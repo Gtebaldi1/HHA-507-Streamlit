@@ -11,7 +11,7 @@ import numpy as np
 import plotly.express as px
 
 st.title('HHA 504 Streamlit Final Assignment')
-st.write('Gina Tebaldi dog ') 
+st.write('Gina Tebaldi ') 
 
 @st.cache
 def load_hospitals():
@@ -26,3 +26,8 @@ def load_outpatient():
     outpatientdf = pd.read_csv('https://raw.githubusercontent.com/hantswilliams/AHI_DataSci_507/main/Deployment_Streamlit/outpatient_2015.csv')
     return outpatientdf
 
+hospitaldf = load_hospitals()
+inpatientdf = load_inatpatient()
+outpatientdf = load_outpatient()  
+
+st.header('Question 1: How does Stony Brook compare to the rest of New York?')
