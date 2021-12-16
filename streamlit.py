@@ -27,6 +27,3 @@ def load_outpatient():
 
 st.header('Question 1')
 st.markdown('What are the most common hospital type? For New York how many Acute care Hospitals are ranked number 1?')
-st.dataframe(hospitaldf)
-table1 = hospitals_ny['hospital_type'].value_counts().reset_index()
-st.header('Hospital Types for New York')
