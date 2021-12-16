@@ -34,3 +34,9 @@ st.header('Question 1: How does Stony Brook compare to the rest of New York?')
 
 st.header('Hospital Data')
 st.dataframe(load_hospital())
+
+st.header('Inpatient Data')
+st.dataframe(load_inpatient())
+
+st.header('Outpatient Data')
+st.dataframe(load_outpatient())
