@@ -86,7 +86,7 @@ st.header('Average Total Payments for DRG Codes at SBUH')
 st.markdown('This pivot table shows the average total payments per drg code for Stony Brook University Hospital.')
 st.dataframe(sbdischarges)
 st.markdown('Answer: The highest average total payment came from drg code 003 - ECMO OR TRACH W MV >96 HRS OR PDX EXC FACE, MOUTH & NECK W MAJ O.R.')
-st.markdown('Followed by the second highest of code 004- Trach w...')
+st.markdown('Followed by the second highest of code 004- TRACH W MV 96+ HRS OR PDX...')
 
 
 
