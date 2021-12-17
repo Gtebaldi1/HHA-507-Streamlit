@@ -52,7 +52,7 @@ st.header('Question 1: What are the most common type of hospitals?')
 st.subheader('Hospital Types')
 bar1 = hospitaldf['hospital_type'].value_counts().reset_index()
 st.dataframe(bar1)
-st.markdown('Acute care hospitals are the most common, followed by critical, and then psychiatric')
+st.markdown('Answer: Acute care hospitals are the most common, followed by critical, and then psychiatric')
 
 
 hospitals_ny = hospitaldf[hospitaldf['state'] == 'NY']
@@ -64,7 +64,7 @@ table1 = hospitals_ny['hospital_type'].value_counts().reset_index()
 st.header('Types of hospitals in New York')
 st.markdown('Number of types of hospitals in New York')
 st.dataframe(table1)
-st.markdown ('Acute care hospitals are also the most common type of hospital in New York')
+st.markdown ('Answer: Acute care hospitals are also the most common type of hospital in New York')
 
 
 
@@ -77,7 +77,7 @@ st.dataframe(sbinpatient)
 sbdischarges = sbinpatient.pivot_table(index =['drg_definition'],values =['total_discharges'],aggfunc='mean')
 st.header(' Discharges for DRG Codes at Stony Brook')
 st.dataframe(sbdischarges)
-st.markdown('Scrolling through the pivot table the highest amount of discharges came from "SEPTICEMIA OR SEVERE SEPSIS W/O MV 96+ HOURS W MCC" 628 discharges, followed by "MAJOR JOINT REPLACEMENT OR REATTACHMENT OF LOWER EXTREMITY W/O MCC" with 286 discharges.')
+st.markdown('Answer: Scrolling through the pivot table the highest amount of discharges came from "SEPTICEMIA OR SEVERE SEPSIS W/O MV 96+ HOURS W MCC" 628 discharges, followed by "MAJOR JOINT REPLACEMENT OR REATTACHMENT OF LOWER EXTREMITY W/O MCC" with 286 discharges.')
 
 
 
