@@ -80,6 +80,22 @@ st.header(' Discharges for DRG Codes at Stony Brook')
 st.dataframe(sbdischarges)
 st.markdown('Answer: Scrolling through the pivot table the highest amount of discharges came from "SEPTICEMIA OR SEVERE SEPSIS W/O MV 96+ HOURS W MCC" 628 discharges, followed by "MAJOR JOINT REPLACEMENT OR REATTACHMENT OF LOWER EXTREMITY W/O MCC" with 286 discharges.')
 
+sbdischarges = sbinpatient.pivot_table(index =['drg_definition'],values =['average_total_payments'],aggfunc='mean')
+st.header('Average Total Payments for DRG Codes at Stony Brook')
+st.markdown('This pivot table shows the average total payments per drg code for Stony Brook University Hospital.')
+st.dataframe(sbdischarges)
+st.markdown('You can see that the highest average total payment came from drg code 003 - ECMO OR TRACH W MV >96 HRS OR PDX EXC FACE, MOUTH & NECK W MAJ O.R.')
+
+
+
+
+
+
+
+
+
+
+
 st.header ('Question 4: What is the most DRG for NY hospitals?')
 inpatient_ny = inpatientdf[inpatientdf['provider_state'] == 'NY']
 total_inpatient_count = sum(inpatient_ny['total_discharges'])
@@ -92,26 +108,6 @@ st.header("Most Common DRG in NY hospitals")
 table2 = costs_condition_hospital['drg_definition'].value_counts().reset_index()
 st.dataframe (table2)
 
-
-
-costs = inpatient_ny.groupby('provider_name')['avsterage_total_payments'].sum().reset_index()
-costs['average_total_payments'] = costs['average_total_payments'].astype('int64')
-
-
-costs_medicare = inpatient_ny.groupby('provider_name')['average_medicare_payments'].sum().reset_index()
-costs_medicare['average_medicare_payments'] = costs_medicare['average_medicare_payments'].astype('int64')
-
-
-costs_sum = costs.merge(costs_medicare, how='left', left_on='provider_name', right_on='provider_name')
-costs_sum['delta'] = costs_sum['average_total_payments'] - costs_sum['average_medicare_payments']
-
-
-st.title('COSTS')
-
-bar3 = px.bar(costs_sum, x='provider_name', y='average_total_payments')
-st.plotly_chart(bar3)
-st.header("Hospital - ")
-st.dataframe(costs_sum)
 
 
 
