@@ -59,7 +59,7 @@ sbinpatient = inpatientdf[inpatientdf['provider_id']==330393]
 st.header('Inpatient Data for Stony Brook Hospital')
 st.dataframe(sbinpatient)
 
-sbdischarges = sbinpatient.pivot_table(index =['drg_definition'],values =['total_discharges'],aggfunc='mean')
+sbdischarges = sbinpatient.pivot_table(index =['drg_definition'],values =['total_discharges'],aggfunc='most')
 st.header(' Discharges for DRG Codes at Stony Brook')
 st.dataframe(sbdischarges)
 st.markdown('Per the table above, you can see that the highest amount of discharges came from drg code 871 - SEPTICEMIA OR SEVERE SEPSIS W/O MV 96+ HOURS W MCC.')
