@@ -62,8 +62,9 @@ st.dataframe(hospitals_ny)
 st.header('Question 3: What is the most common type of hospital in New York')
 table1 = hospitals_ny['hospital_type'].value_counts().reset_index()
 st.header('Types of hospitals in New York')
-st.markdown('5 NY HOSPITALS AND AMOUNTS')
+st.markdown('Number of types of hospitals in New York')
 st.dataframe(table1)
+st.markdown ('Acute care hospitals are also the most common type of hospital in New York')
 
 
 
