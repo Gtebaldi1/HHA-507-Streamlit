@@ -89,6 +89,10 @@ costs_condition_hospital = inpatient_ny.groupby(['provider_name', 'drg_definitio
 st.header("Costs by Condition and Hospital - Average Total Payments")
 st.dataframe(costs_condition_hospital)
 
+# hospitals = costs_condition_hospital['provider_name'].drop_duplicates()
+# hospital_choice = st.sidebar.selectbox('Select your hospital:', hospitals)
+# filtered = costs_sum["provider_name"].loc[costs_sum["provider_name"] == hospital_choice]
+# st.dataframe(filtered)
 
 
 
