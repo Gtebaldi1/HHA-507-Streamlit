@@ -82,6 +82,7 @@ st.markdown('Answer: Scrolling through the pivot table the highest amount of dis
 
 st.header ('Question 4: What is the most expensive inpatient DRG at SBUH?')
 costpivotdrg = sbinpatient.pivot_table(index=['provider_name','drg_definition'],values=['average_total_payments'],aggfunc='mean')
+costpivotdrg = sbinpatient.sort_values(['average_total_payments'], ascending=False)
 st.header('Average Total Payments for DRG Codes at SBUH')
 st.dataframe(costpivotdrg)
 st.markdown('Answer: The highest average total payment came from drg code 003 - ECMO OR TRACH W MV >96 HRS OR PDX EXC FACE, MOUTH & NECK W MAJ O.R.')
