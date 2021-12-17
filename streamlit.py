@@ -89,7 +89,7 @@ st.markdown('Followed by the second highest of code 004- TRACH W MV 96+ HRS OR P
 
 
 costpivot = sbinpatient.pivot_table(index=['provider_name','drg_definition'],values=['average_total_payments'],aggfunc='mean')
-st.dataframe(dcostpivot)
+st.dataframe(costpivot)
 
 
 
