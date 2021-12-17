@@ -111,8 +111,8 @@ st.header('Question 6: What is the most expensive inpatient APCs code for SBUH?'
 sboutpatientdrg = sboutpatient.pivot_table(index=['provider_id','provider_name','apc'],values=['average_total_payments'])
 sboutpatientapcs= sboutpatientdrg.sort_values(['average_total_payments'], ascending=False)
 st.dataframe(sboutpatientapcs)
-st.markdown('Answer the most expensive APC for SBUH is Level IV Endoscopy Upper Airway')
-
+st.markdown('Answer: The most expensive APC for SBUH is Level IV Endoscopy Upper Airway')
+st.markdown('Followed by Level IV Nerve Injections and Level II Cardiac Imaging')
 
 
 
