@@ -54,12 +54,15 @@ bar1 = hospitaldf['hospital_type'].value_counts().reset_index()
 st.dataframe(bar1)
 st.caption('Acute care hospitals are the most common, followed by critical, and then psychiatric')
 
-st.header(' Question 2: What are the most expensive APC for Stony Brook Hopsital?')
-st.subheader('Pivot APC for SBU Hospital')
-dataframe_pivot = df_merged_clean_SB.pivot_table(index=['provider_id','apc'],values=['average_total_payments'],aggfunc='mean')
-st.dataframe(dataframe_pivot)
-st.markdown('Answer:The most expensive average total cost for APC in the outpatient and hospital dataframe with SBU hospital are the following')
-st.markdown('1. Level IV endoscopy 2307.21, 2. Level IV Nerver Injections 1325.64, 3. Level II Cardiac Imaging 1300.67')
+st.header('Question 2: Most expensive inpatient DRGs for Stony Brook Hospital?')
+sbinpatient = inpatientdf[inpatientdf['provider_id']==330393]
+st.header('Inpatient Data for Stony Brook Hospital')
+st.dataframe(sb_inpatient)
+
+sbdischarges = sbinpatient.pivot_table(index =['drg_definition'],values =['total_discharges'],aggfunc='mean')
+st.header(' Discharges for DRG Codes at Stony Brook')
+st.dataframe(sbdischarges)
+st.markdown('Per the table above, you can see that the highest amount of discharges came from drg code 871 - SEPTICEMIA OR SEVERE SEPSIS W/O MV 96+ HOURS W MCC.')
 
 
 
