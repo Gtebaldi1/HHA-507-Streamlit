@@ -46,13 +46,13 @@ st.header('Outpatient Data')
 st.dataframe(load_outpatient())
 
 
+
+
 st.header('Question 1: What are the most common type of hospitals?')
-st.subheader( 'Hospital Types')
-fig = px.pie(bar1, values='hospital_type', names='index')
-st.plotly_chart(fig)
-
-
-
+st.subheader('Hospital Types')
+bar1 = hospitaldf['hospital_type'].value_counts().reset_index()
+st.dataframe(bar1)
+st.caption('Acute care hospitals are the most common')
 
 
 
