@@ -94,6 +94,26 @@ st.dataframe (table2)
 
 
 
+costs = inpatient_ny.groupby('provider_name')['avsterage_total_payments'].sum().reset_index()
+costs['average_total_payments'] = costs['average_total_payments'].astype('int64')
+
+
+costs_medicare = inpatient_ny.groupby('provider_name')['average_medicare_payments'].sum().reset_index()
+costs_medicare['average_medicare_payments'] = costs_medicare['average_medicare_payments'].astype('int64')
+
+
+costs_sum = costs.merge(costs_medicare, how='left', left_on='provider_name', right_on='provider_name')
+costs_sum['delta'] = costs_sum['average_total_payments'] - costs_sum['average_medicare_payments']
+
+
+st.title('COSTS')
+
+bar3 = px.bar(costs_sum, x='provider_name', y='average_total_payments')
+st.plotly_chart(bar3)
+st.header("Hospital - ")
+st.dataframe(costs_sum)
+
+
 
 
 
