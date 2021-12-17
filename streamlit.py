@@ -9,6 +9,10 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import plotly.express as px
+import time
+import matplotlib.pyplot as plt
+import plotly.graph_objects as go
+import plotly
 
 st.title('HHA 504 Streamlit Final Assignment')
 st.write('Gina Tebaldi ') 
