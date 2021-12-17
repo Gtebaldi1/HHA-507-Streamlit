@@ -15,7 +15,7 @@ import plotly.graph_objects as go
 import plotly
 
 st.title('HHA 504 Streamlit Final Assignment')
-st.write('Gina Tebaldi ') 
+st.write('Gina Tebaldi :smile:') 
 
 @st.cache
 def load_hospital():
