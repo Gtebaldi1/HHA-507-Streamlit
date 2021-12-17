@@ -54,7 +54,7 @@ bar1 = hospitaldf['hospital_type'].value_counts().reset_index()
 st.dataframe(bar1)
 st.caption('Acute care hospitals are the most common, followed by critical, and then psychiatric')
 
-st.header('Question 2: Most expensive inpatient DRGs for Stony Brook Hospital?')
+st.header('Question 2: What caused the most dischards DRGs for Stony Brook Hospital?')
 sbinpatient = inpatientdf[inpatientdf['provider_id']==330393]
 st.header('Inpatient Data for Stony Brook Hospital')
 st.dataframe(sbinpatient)
@@ -62,7 +62,7 @@ st.dataframe(sbinpatient)
 sbdischarges = sbinpatient.pivot_table(index =['drg_definition'],values =['total_discharges'],aggfunc='most')
 st.header(' Discharges for DRG Codes at Stony Brook')
 st.dataframe(sbdischarges)
-st.markdown('Per the table above, you can see that the highest amount of discharges came from drg code 871 - SEPTICEMIA OR SEVERE SEPSIS W/O MV 96+ HOURS W MCC.')
+st.markdown('Scrolling through the pivot table the highest amount of discharges came from "SEPTICEMIA OR SEVERE SEPSIS W/O MV 96+ HOURS W MCC"')
 
 
 
