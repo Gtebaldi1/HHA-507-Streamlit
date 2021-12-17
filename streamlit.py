@@ -54,6 +54,11 @@ bar1 = hospitaldf['hospital_type'].value_counts().reset_index()
 st.dataframe(bar1)
 st.markdown('Acute care hospitals are the most common, followed by critical, and then psychiatric')
 
+
+hospitals_ny = hospitaldf[hospitaldf['state'] == 'NY']
+st.header('Hospitals in New York')
+st.dataframe(hospitals_ny)
+
 st.header('Question 3: What is the most common type of hospital in New York')
 table1 = hospitals_ny['hospital_type'].value_counts().reset_index()
 st.header('Types of hospitals in New York')
