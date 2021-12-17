@@ -91,7 +91,7 @@ st.dataframe(costs_condition_hospital)
 st.header("Most Common DRG in NY hospitals")
 table2 = costs_condition_hospital['drg_definition'].value_counts().reset_index()
 st.dataframe (table2)
-table2 = costs_condition_hospital['average_total_payments'].value_counts().reset_index()
+table3= costs_condition_hospital['average_total_payments'].value_counts().reset_index()
 st.dataframe (table3)
 
 
