@@ -103,6 +103,10 @@ st.header("Most Common DRG in NY hospitals")
 table2 = costs_condition_hospital['drg_definition'].value_counts().reset_index()
 st.dataframe (table2)
 
+sboutpatient = outpatientdf[outpatientdf['provider_id']==330393]
+st.header('Outpatient Data for Stony Brook')
+st.dataframe(sboutpatient)
+
 
 
 
