@@ -30,7 +30,7 @@ hospitaldf = load_hospital()
 inpatientdf = load_inpatient()
 outpatientdf = load_outpatient()  
 
-st.header('Question 1: How does Stony Brook compare to the rest of New York?')
+
 
 st.header('Hospital Data')
 st.dataframe(load_hospital())
@@ -40,3 +40,9 @@ st.dataframe(load_inpatient())
 
 st.header('Outpatient Data')
 st.dataframe(load_outpatient())
+
+st.header('Question 1: How does Stony Brook compare to the rest of New York?')
+st.subheader('Hospital Type in New York')
+bar1 = hospitaldf['hospital_type'].value_counts().reset_index()
+st.dataframe(bar1)
+st.caption('Acute care hospitals is the most common hospital type in New York ')
