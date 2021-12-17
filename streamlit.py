@@ -81,18 +81,11 @@ st.dataframe(sbdischarges)
 st.markdown('Answer: Scrolling through the pivot table the highest amount of discharges came from "SEPTICEMIA OR SEVERE SEPSIS W/O MV 96+ HOURS W MCC" 628 discharges, followed by "MAJOR JOINT REPLACEMENT OR REATTACHMENT OF LOWER EXTREMITY W/O MCC" with 286 discharges.')
 
 st.header ('Question 4: What is the most expensive inpatient DRG at SBUH?')
-sbdischarges = sbinpatient.pivot_table(index =['drg_definition'],values =['average_total_payments'],aggfunc='mean')
+costpivotdrg = sbinpatient.pivot_table(index=['provider_name','drg_definition'],values=['average_total_payments'],aggfunc='mean')
 st.header('Average Total Payments for DRG Codes at SBUH')
-st.dataframe(sbdischarges)
+st.dataframe(costpivotdrg)
 st.markdown('Answer: The highest average total payment came from drg code 003 - ECMO OR TRACH W MV >96 HRS OR PDX EXC FACE, MOUTH & NECK W MAJ O.R.')
 st.markdown('Followed by the second highest of code 004- TRACH W MV 96+ HRS OR PDX...')
-
-
-costpivot = sbinpatient.pivot_table(index=['provider_name','drg_definition'],values=['average_total_payments'],aggfunc='mean')
-st.dataframe(costpivot)
-
-
-
 
 
 
