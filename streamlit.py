@@ -88,7 +88,7 @@ st.markdown('Answer: The highest average total payment came from drg code 003 - 
 st.markdown('Followed by the second highest of code 004- TRACH W MV 96+ HRS OR PDX...')
 
 
-costpivot = sbinpattient.pivot_table(index=['provider_name','drg_definition'],values=['average_total_payments'],aggfunc='mean')
+costpivot = sbinpatient.pivot_table(index=['provider_name','drg_definition'],values=['average_total_payments'],aggfunc='mean')
 st.dataframe(dcostpivot)
 
 
