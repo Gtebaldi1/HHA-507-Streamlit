@@ -75,15 +75,19 @@ st.header('Question 3: What caused the most discharges DRGs for Stony Brook Hosp
 sbinpatient = inpatientdf[inpatientdf['provider_id']==330393]
 st.header('Inpatient Data from Stony Brook Hospital')
 st.dataframe(sbinpatient)
-
 sbdischarges = sbinpatient.pivot_table(index =['drg_definition'],values =['total_discharges'],aggfunc='mean')
 st.header(' Discharges for DRG Codes at Stony Brook')
 st.dataframe(sbdischarges)
 st.markdown('Answer: Scrolling through the pivot table the highest amount of discharges came from "SEPTICEMIA OR SEVERE SEPSIS W/O MV 96+ HOURS W MCC" 628 discharges, followed by "MAJOR JOINT REPLACEMENT OR REATTACHMENT OF LOWER EXTREMITY W/O MCC" with 286 discharges.')
 
 
+inpatient_ny = inpatientdf[inpatientdf['provider_state'] == 'NY']
+total_inpatient_count = sum(inpatient_ny['total_discharges'])
 
 
+costs_condition_hospital = inpatient_ny.groupby(['provider_name', 'drg_definition'])['average_total_payments'].sum().reset_index()
+st.header("Costs by Condition and Hospital - Average Total Payments")
+st.dataframe(costs_condition_hospital)
 
 
 
