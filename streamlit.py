@@ -107,7 +107,11 @@ sboutpatient = outpatientdf[outpatientdf['provider_id']==330393]
 st.header('Outpatient Data for Stony Brook')
 st.dataframe(sboutpatient)
 
-
+st.header('Question 6: What is the most expensive inpatient APCs code for SBUH?')
+sboutpatientdrg = sboutpatient.pivot_table(index=['provider_id','provider_name','apc'],values=['average_total_payments'])
+sboutpatientapcs= sboutpatientdrg.sort_values(['average_total_payments'], ascending=False)
+st.markdown('Answer the most expensive APC for SBUH is Level IV Endoscopy Upper Airway')
+st.dataframe(sboutpatientapcs)
 
 
 
