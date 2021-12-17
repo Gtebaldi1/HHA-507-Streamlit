@@ -66,7 +66,9 @@ st.markdown('Number of types of hospitals in New York')
 st.dataframe(table1)
 st.markdown ('Answer: Acute care hospitals are also the most common type of hospital in New York')
 
-
+st.subheader('With a PIE Chart:')
+fig = px.pie(bar1, values='hospital_type', names='index')
+st.plotly_chart(fig)
 
 
 st.header('Question 3: What caused the most discharges DRGs for Stony Brook Hospital?')
@@ -80,17 +82,6 @@ st.dataframe(sbdischarges)
 st.markdown('Answer: Scrolling through the pivot table the highest amount of discharges came from "SEPTICEMIA OR SEVERE SEPSIS W/O MV 96+ HOURS W MCC" 628 discharges, followed by "MAJOR JOINT REPLACEMENT OR REATTACHMENT OF LOWER EXTREMITY W/O MCC" with 286 discharges.')
 
 
-
-st.subheader('Hospital Type - NY')
-bar1 = hospitals_ny['hospital_type'].value_counts().reset_index()
-st.dataframe(bar1)
-
-st.markdown('The majority of hospitals in NY are acute care, followed by psychiatric')
-
-
-st.subheader('With a PIE Chart:')
-fig = px.pie(bar1, values='hospital_type', names='index')
-st.plotly_chart(fig)
 
 
 
