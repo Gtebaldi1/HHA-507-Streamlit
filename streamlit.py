@@ -66,7 +66,7 @@ st.markdown('Number of types of hospitals in New York')
 st.dataframe(table1)
 st.markdown ('Answer: Acute care hospitals are also the most common type of hospital in New York')
 
-st.subheader('With a PIE Chart:')
+st.subheader('PIE Chart of hospital type in NY:')
 fig = px.pie(bar1, values='hospital_type', names='index')
 st.plotly_chart(fig)
 
