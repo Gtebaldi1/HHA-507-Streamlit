@@ -80,7 +80,7 @@ st.header(' Discharges for DRG Codes at Stony Brook')
 st.dataframe(sbdischarges)
 st.markdown('Answer: Scrolling through the pivot table the highest amount of discharges came from "SEPTICEMIA OR SEVERE SEPSIS W/O MV 96+ HOURS W MCC" 628 discharges, followed by "MAJOR JOINT REPLACEMENT OR REATTACHMENT OF LOWER EXTREMITY W/O MCC" with 286 discharges.')
 
-
+st.header ('Question 4: What caused the most DRG for NY hospitals')
 inpatient_ny = inpatientdf[inpatientdf['provider_state'] == 'NY']
 total_inpatient_count = sum(inpatient_ny['total_discharges'])
 
