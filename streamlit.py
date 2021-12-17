@@ -88,7 +88,7 @@ total_inpatient_count = sum(inpatient_ny['total_discharges'])
 costs_condition_hospital = inpatient_ny.groupby(['provider_name', 'drg_definition'])['average_total_payments'].sum().reset_index()
 st.header("Costs by Condition and Hospital - Average Total Payments")
 st.dataframe(costs_condition_hospital)
-
+table2 = costs_condition_hospital['drg_definition'].value_counts().reset_index()
 
 
 
