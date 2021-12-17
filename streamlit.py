@@ -57,7 +57,7 @@ st.caption('Acute care hospitals are the most common, followed by critical, and 
 st.header('Question 2: Most expensive inpatient DRGs for Stony Brook Hospital?')
 sbinpatient = inpatientdf[inpatientdf['provider_id']==330393]
 st.header('Inpatient Data for Stony Brook Hospital')
-st.dataframe(sb_inpatient)
+st.dataframe(sbinpatient)
 
 sbdischarges = sbinpatient.pivot_table(index =['drg_definition'],values =['total_discharges'],aggfunc='mean')
 st.header(' Discharges for DRG Codes at Stony Brook')
