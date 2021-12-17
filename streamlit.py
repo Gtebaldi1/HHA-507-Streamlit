@@ -52,7 +52,7 @@ st.header('Question 1: What are the most common type of hospitals?')
 st.subheader('Hospital Types')
 bar1 = hospitaldf['hospital_type'].value_counts().reset_index()
 st.dataframe(bar1)
-st.caption('Acute care hospitals are the most common')
+st.caption('Acute care hospitals are the most common, followed by critical, and then psychiatric')
 
 
 
